@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubewatch
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubewatch
+  template:
+    metadata:
+      labels:
+        app: kubewatch
+    spec:
+      containers:
+      - name: kubewatch
+        image: kubewatch:v1
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 3001
+

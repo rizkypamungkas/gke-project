@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>KubeWatch</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="background-grid"></div>
+
+  <main class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+
+      <div class="brand">
+        <div class="brand-icon">
+          ◈
+        </div>
+
+        <div>
+          <h1>KubeWatch</h1>
+          <p>Kubernetes Workload Monitor</p>
+        </div>
+      </div>
+
+      <div class="system-status">
+        <span class="status-dot"></span>
+        <span id="systemStatus">SYSTEM ONLINE</span>
+      </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div>
+        <div class="eyebrow">
+          PLATFORM OBSERVABILITY
+        </div>
+
+        <h2>
+          Monitor your workload<br />
+          <span>from the cluster.</span>
+        </h2>
+
+        <p class="hero-description">
+          A lightweight dashboard for observing application health,
+          runtime information and Kubernetes workload state.
+        </p>
+      </div>
+
+      <div class="refresh-box">
+        <span>LAST CHECK</span>
+        <strong id="lastCheck">--</strong>
+      </div>
+
+    </section>
+
+
+    <!-- STATUS CARDS -->
+    <section class="status-grid">
+
+      <div class="card health-card">
+
+        <div class="card-header">
+          <span>APPLICATION STATUS</span>
+          <span class="card-icon">●</span>
+        </div>
+
+        <div class="health-content">
+
+          <div class="health-indicator">
+            <span class="large-dot"></span>
+            <strong id="healthStatus">HEALTHY</strong>
+          </div>
+
+          <p>
+            API endpoint is responding normally.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-header">
+          <span>WORKLOAD</span>
+          <span class="card-icon">⌁</span>
+        </div>
+
+        <div class="metric-value" id="serviceName">
+          --
+        </div>
+
+        <p class="metric-label">
+          Service
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-header">
+          <span>VERSION</span>
+          <span class="card-icon">◆</span>
+        </div>
+
+        <div class="metric-value" id="version">
+          --
+        </div>
+
+        <p class="metric-label">
+          Application release
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- INSTANCE INFORMATION -->
+    <section class="section">
+
+      <div class="section-title">
+
+        <div>
+          <div class="eyebrow">RUNTIME</div>
+          <h3>Instance Information</h3>
+        </div>
+
+        <div class="live-badge">
+          <span></span>
+          LIVE
+        </div>
+
+      </div>
+
+
+      <div class="info-grid">
+
+        <div class="info-card">
+          <span class="info-label">HOSTNAME</span>
+          <code id="hostname">--</code>
+        </div>
+
+        <div class="info-card">
+          <span class="info-label">PLATFORM</span>
+          <code id="platform">--</code>
+        </div>
+
+        <div class="info-card">
+          <span class="info-label">NODE VERSION</span>
+          <code id="nodeVersion">--</code>
+        </div>
+
+        <div class="info-card">
+          <span class="info-label">UPTIME</span>
+          <code id="uptime">--</code>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- KUBERNETES PREVIEW -->
+    <section class="section">
+
+      <div class="section-title">
+
+        <div>
+          <div class="eyebrow">INFRASTRUCTURE</div>
+          <h3>Kubernetes Workload</h3>
+        </div>
+
+      </div>
+
+
+      <div class="architecture">
+
+        <div class="architecture-node">
+          <span class="node-icon">◈</span>
+          <strong>Service</strong>
+          <small>Traffic Entry</small>
+        </div>
+
+        <div class="connection"></div>
+
+        <div class="architecture-node active">
+          <span class="node-icon">⬡</span>
+          <strong>Pod</strong>
+          <small id="podHostname">Detecting...</small>
+        </div>
+
+        <div class="connection"></div>
+
+        <div class="architecture-node">
+          <span class="node-icon">⚙</span>
+          <strong>Application</strong>
+          <small>Node.js</small>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+      <div>
+        KubeWatch <span>•</span> Kubernetes Platform Project
+      </div>
+
+      <div class="footer-right">
+        API <span id="apiStatus">CONNECTED</span>
+      </div>
+
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
+
